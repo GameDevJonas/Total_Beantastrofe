@@ -17,11 +17,16 @@ public class TileInfo : MonoBehaviour
     private Animator anim;
     public ScriptableTile currentTile;
 
-    void Start()
+    private void Awake()
     {
         list = FindObjectOfType<TileList>();
         anim = GetComponent<Animator>();
-        LoadInfo(list.tiles[0]);
+    }
+
+    void Start()
+    {
+        
+        //LoadInfo(list.tiles[0]);
     }
 
     // Update is called once per frame

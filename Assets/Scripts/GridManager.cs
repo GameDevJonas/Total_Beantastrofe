@@ -12,14 +12,19 @@ public class GridManager : MonoBehaviour
 
     public GameObject tilePrefab;
 
-    public bool firstLineFertile;
+    public bool firstLineFertile, lastLine;
 
     void Start()
     {
         firstLineFertile = true;
+        lastLine = false;
         grid = new int[gridSizeX, gridSizeY];
         for (int i = 0; i < gridSizeX; i++)
         {
+            if(i == gridSizeX - 1)
+            {
+                lastLine = true;
+            }
             for (int j = 0; j < gridSizeY; j++)
             {
                 SpawnTile(i, j);
@@ -41,6 +46,14 @@ public class GridManager : MonoBehaviour
         if (firstLineFertile)
         {
             g.GetComponent<TileInfo>().fertility = 1;
+        }
+        if (lastLine)
+        {
+            g.GetComponent<TileInfo>().LoadInfo(FindObjectOfType<TileList>().tiles[1]);
+        }
+        else
+        {
+            g.GetComponent<TileInfo>().LoadInfo(FindObjectOfType<TileList>().tiles[0]);
         }
     }
 }
