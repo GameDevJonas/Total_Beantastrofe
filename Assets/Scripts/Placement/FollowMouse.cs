@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class FollowMouse : MonoBehaviour, IPointerDownHandler
+public class FollowMouse : MonoBehaviour
 {
     public GameObject plant;
     // Start is called before the first frame update
@@ -23,6 +23,10 @@ public class FollowMouse : MonoBehaviour, IPointerDownHandler
         {
             PressMouse();
         }
+        if (Input.GetMouseButtonDown(1))
+        {
+            RemovePlant();
+        }
     }
 
     public void PressMouse()
@@ -39,19 +43,11 @@ public class FollowMouse : MonoBehaviour, IPointerDownHandler
                 info.planted = true;
                 Destroy(this.gameObject);
             }
-            else
-            {
-                Destroy(this.gameObject);
-            }
-        }
-        else
-        {
-            Destroy(this.gameObject);
         }
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    public void RemovePlant()
     {
-
+        Destroy(this.gameObject);
     }
 }
