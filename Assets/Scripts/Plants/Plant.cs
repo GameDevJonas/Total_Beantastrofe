@@ -25,6 +25,7 @@ public class Plant : MonoBehaviour
 
     public void Start()
     {
+        GetComponentInParent<TileInfo>().GetComponent<BoxCollider2D>().enabled = false;
         grid = FindObjectOfType<GridManager>();
         myTile = GetComponentInParent<TileInfo>().gridPosition;
         fertilizeTimer = fertilizeTimerSet;
@@ -32,7 +33,7 @@ public class Plant : MonoBehaviour
         {
             for (int j = 0; j < fertilizeRange.y; j++)
             {
-                if (((int)myTile.x - 1 + i) >= 0 && ((int)myTile.y - 1 + j) >= 0 && ((int)myTile.x - 1 + i) <= fertilizeRange.x + 1 && ((int)myTile.y - 1 + j) <= fertilizeRange.y + 1)
+                if (((int)myTile.x - 1 + i) >= 0 && ((int)myTile.y - 1 + j) >= 0 && ((int)myTile.x - 1 + i) <= grid.gridSizeX - 1 && ((int)myTile.y - 1 + j) <= grid.gridSizeY - 1)
                     if (onlyAdjacent)
                     {
                         if ((i == 0 && j == 0) || (i == 0 && j == fertilizeRange.y - 1) || (i == fertilizeRange.x - 1 && j == 0) || ((i == fertilizeRange.x - 1 && j == fertilizeRange.y - 1)))

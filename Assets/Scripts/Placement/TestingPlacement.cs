@@ -21,6 +21,15 @@ public class TestingPlacement : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        ActivateShovel shovel = FindObjectOfType<ActivateShovel>();
+        if (shovel.shovelActive)
+        {
+            shovel.shovelActive = false;
+
+            shovel.shovel.SetActive(shovel.shovelActive);
+            shovel.glove.SetActive(!shovel.shovelActive);
+            return;
+        }
         GameObject g = Instantiate(placeMentIndicator, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity);
         //g.transform.position = new Vector3(g.transform.position.x, g.transform.position.y, 0);
     }
