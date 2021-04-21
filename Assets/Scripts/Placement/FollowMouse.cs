@@ -39,7 +39,8 @@ public class FollowMouse : MonoBehaviour
             TileInfo info = hit.collider.gameObject.GetComponent<TileInfo>();
             if (!info.planted && info.fertility >= .9f)
             {
-                Instantiate(plant, info.transform.position, Quaternion.identity);
+                GameObject plantClone = Instantiate(plant, info.transform);
+                plantClone.transform.localPosition = new Vector3(0, 0, 0);
                 info.planted = true;
                 Destroy(this.gameObject);
             }

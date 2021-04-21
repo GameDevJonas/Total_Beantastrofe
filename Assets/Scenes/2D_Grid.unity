@@ -311,8 +311,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f39fd7d116898e4782c34dc1550bcea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridSizeX: 14
-  gridSizeY: 7
+  gridSizeX: 9
+  gridSizeY: 5
   spriteSizeX: 1
   spriteSizeY: 1
   tilePrefab: {fileID: 2504714247775841493, guid: ffb072a9860897e45a17fe536f916e63,
@@ -364,7 +364,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &823648788
 Transform:
   m_ObjectHideFlags: 0
@@ -703,7 +703,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587242330}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5542473, y: 0.12976904, z: 0.41766605}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -986,6 +986,11 @@ PrefabInstance:
       propertyPath: list
       value: 
       objectReference: {fileID: 602767387}
+    - target: {fileID: 2504714247775841492, guid: ffb072a9860897e45a17fe536f916e63,
+        type: 3}
+      propertyPath: fertility
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2504714247775841493, guid: ffb072a9860897e45a17fe536f916e63,
         type: 3}
       propertyPath: m_Name

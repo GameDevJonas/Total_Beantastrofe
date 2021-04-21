@@ -8,4 +8,5 @@ public class ScriptableTile : ScriptableObject
     public enum TileType { ground, stone}
     public TileType tileName;
     public bool canBeFertile;
+    public Color mySpriteColor;
 }

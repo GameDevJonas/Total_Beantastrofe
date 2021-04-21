@@ -29,6 +29,11 @@ public class TileInfo : MonoBehaviour
         //LoadInfo(list.tiles[0]);
     }
 
+    public void UpdateGridPosition(int x, int y)
+    {
+        gridPosition = new Vector2(x, y);
+    }
+
     // Update is called once per frame
     void Update()
     {

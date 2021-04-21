@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GridManager : MonoBehaviour
 {
-    public int[,] grid;
+    //public int[,] grid;
+    public TileInfo[,] tileGrid;
 
     public int gridSizeX, gridSizeY;
 
@@ -18,7 +19,8 @@ public class GridManager : MonoBehaviour
     {
         firstLineFertile = true;
         lastLine = false;
-        grid = new int[gridSizeX, gridSizeY];
+        //grid = new int[gridSizeX, gridSizeY];
+        tileGrid = new TileInfo[gridSizeX, gridSizeY];
         for (int i = 0; i < gridSizeX; i++)
         {
             if(i == gridSizeX - 1)
@@ -55,5 +57,7 @@ public class GridManager : MonoBehaviour
         {
             g.GetComponent<TileInfo>().LoadInfo(FindObjectOfType<TileList>().tiles[0]);
         }
+        tileGrid[x, y] = g.GetComponent<TileInfo>();
+        g.GetComponent<TileInfo>().UpdateGridPosition(x, y);
     }
 }
