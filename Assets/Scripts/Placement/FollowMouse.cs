@@ -34,6 +34,7 @@ public class FollowMouse : MonoBehaviour
         Debug.Log("Tap");
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
+        Debug.Log("Hit: ", hit.collider.gameObject);
         if (hit.collider != null && hit.collider.CompareTag("Tile"))
         {
             TileInfo info = hit.collider.gameObject.GetComponent<TileInfo>();

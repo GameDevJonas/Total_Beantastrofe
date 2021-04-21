@@ -11,10 +11,12 @@ public class Plant : MonoBehaviour
     private float abilityTimer;
     public int damage;
     public Vector2 aoe;
-    private Vector2 myTile;
+    [HideInInspector]
+    public Vector2 myTile;
     public float fertilizeValue;
     public float fertilizeTimerSet;
-    private float fertilizeTimer;
+    [HideInInspector]
+    public float fertilizeTimer;
     public Vector2 fertilizeRange;
     //public TileInfo[,] fertilizeTiles;
     public bool onlyAdjacent;
@@ -25,7 +27,6 @@ public class Plant : MonoBehaviour
 
     public void Start()
     {
-        GetComponentInParent<TileInfo>().GetComponent<BoxCollider2D>().enabled = false;
         grid = FindObjectOfType<GridManager>();
         myTile = GetComponentInParent<TileInfo>().gridPosition;
         fertilizeTimer = fertilizeTimerSet;

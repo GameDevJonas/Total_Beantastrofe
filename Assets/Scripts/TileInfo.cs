@@ -7,7 +7,7 @@ public class TileInfo : MonoBehaviour
     public ScriptableTile.TileType currentType;
 
     public Vector2 gridPosition;
-    public bool planted, canBeFertile;
+    public bool planted, canBeFertile, hasBush;
 
     [Range(0,1)]
     public float fertility;
@@ -49,7 +49,7 @@ public class TileInfo : MonoBehaviour
                     break;
             }
         }
-
+        GetComponent<Collider2D>().enabled = !planted;
         anim.SetFloat("Fertility", fertility);
     }
 
