@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 03630716f5d77814992ecca04e5b3f6d
+guid: 89326d7643e794842a72641bb27ccbc8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7516271193572666277
-    second: Glove_0
+      213: -988870474548018345
+    second: PROC_SunRay_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -49,7 +49,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1200
+  spritePixelsToUnits: 675
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -106,22 +106,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Glove_0
+      name: PROC_SunRay_0
       rect:
         serializedVersion: 2
-        x: 283
-        y: 522
-        width: 1159
-        height: 954
-      alignment: 9
-      pivot: {x: 0.5442946, y: 0.5113291}
+        x: 272
+        y: 264
+        width: 141
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b54999f1c27d0b790800000000000000
-      internalID: -7516271193572666277
+      spriteID: 75381bbea83d642f0800000000000000
+      internalID: -988870474548018345
       vertices: []
       indices: 
       edges: []

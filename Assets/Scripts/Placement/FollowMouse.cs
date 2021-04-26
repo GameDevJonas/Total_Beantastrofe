@@ -43,6 +43,7 @@ public class FollowMouse : MonoBehaviour
                 GameObject plantClone = Instantiate(plant, info.transform);
                 plantClone.transform.localPosition = new Vector3(0, 0, 0);
                 info.planted = true;
+                FindObjectOfType<GlovePointer>().isHolding = false;
                 Destroy(this.gameObject);
             }
         }
@@ -50,6 +51,7 @@ public class FollowMouse : MonoBehaviour
 
     public void RemovePlant()
     {
+        FindObjectOfType<GlovePointer>().isHolding = false;
         Destroy(this.gameObject);
     }
 }

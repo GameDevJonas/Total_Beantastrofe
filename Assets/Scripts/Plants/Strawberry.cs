@@ -8,6 +8,7 @@ public class Strawberry : Plant
     public List<GameObject> bushes = new List<GameObject>();
 
     private Queue<TileInfo> tilesToBush = new Queue<TileInfo>();
+    public TileInfo[] queueVisual;
     private bool startedBushes = false;
 
     private void Awake()
@@ -40,6 +41,7 @@ public class Strawberry : Plant
 
         if (tilesToBush.Peek().hasBush)
         {
+            tilesToBush.Dequeue();
             return;
         }
         Transform t = tilesToBush.Peek().transform;
@@ -49,6 +51,7 @@ public class Strawberry : Plant
         bushes.Add(bushClone);
         tilesToBush.Dequeue();
         startedBushes = true;
+        queueVisual = tilesToBush.ToArray();
     }
 
     private void OnDestroy()

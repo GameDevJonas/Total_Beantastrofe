@@ -16,7 +16,13 @@ public class ActivateShovel : MonoBehaviour, IPointerDownHandler
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetMouseButtonDown(1) && shovelActive)
+        {
+            shovelActive = !shovelActive;
 
+            shovel.SetActive(shovelActive);
+            glove.SetActive(!shovelActive);
+        }
     }
 
     public void OnPointerDown(PointerEventData eventData)

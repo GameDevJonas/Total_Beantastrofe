@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1055939668484081676}
   - component: {fileID: 5381500099943040356}
   m_Layer: 0
-  m_Name: CarrotIndicator
+  m_Name: StrawberryIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 087486ebbed97c644897e1da5fde1ab5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plant: {fileID: 1055939668484081675, guid: 55c56a02658539d49a32f04ff552762b, type: 3}
+  plant: {fileID: 1055939668484081675, guid: d5b8f7f3fc01f8b4eb24d6b3c445a818, type: 3}
 --- !u!1 &1055939668946080584
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,8 +115,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 11
-  m_Sprite: {fileID: 21300000, guid: c28ef13ceccd63c4094a75fb7200f978, type: 3}
+  m_SortingOrder: 7
+  m_Sprite: {fileID: 21300000, guid: a04592d1492c643428cb8133f14e1388, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.6509804}
   m_FlipX: 1
   m_FlipY: 0

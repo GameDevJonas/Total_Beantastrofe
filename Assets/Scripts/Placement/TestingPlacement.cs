@@ -10,27 +10,31 @@ public class TestingPlacement : MonoBehaviour, IPointerDownHandler
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        ActivateShovel shovel = FindObjectOfType<ActivateShovel>();
-        if (shovel.shovelActive)
+        if (Input.GetMouseButtonDown(0))
         {
-            shovel.shovelActive = false;
+            ActivateShovel shovel = FindObjectOfType<ActivateShovel>();
+            if (shovel.shovelActive)
+            {
+                shovel.shovelActive = false;
 
-            shovel.shovel.SetActive(shovel.shovelActive);
-            shovel.glove.SetActive(!shovel.shovelActive);
-            return;
+                shovel.shovel.SetActive(shovel.shovelActive);
+                shovel.glove.SetActive(!shovel.shovelActive);
+                return;
+            }
+            FindObjectOfType<GlovePointer>().isHolding = true;
+            GameObject g = Instantiate(placeMentIndicator, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity);
         }
-        GameObject g = Instantiate(placeMentIndicator, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity);
         //g.transform.position = new Vector3(g.transform.position.x, g.transform.position.y, 0);
     }
 }

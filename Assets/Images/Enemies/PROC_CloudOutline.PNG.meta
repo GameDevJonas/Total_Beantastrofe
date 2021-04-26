@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 03630716f5d77814992ecca04e5b3f6d
+guid: 6c49430d4d18bbb4ca5a2e96aa4a3666
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7516271193572666277
-    second: Glove_0
+      213: -3802203944952351444
+    second: PROC_CloudOutline_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -49,7 +49,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1200
+  spritePixelsToUnits: 1668
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -106,22 +106,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Glove_0
+      name: PROC_CloudOutline_0
       rect:
         serializedVersion: 2
-        x: 283
-        y: 522
-        width: 1159
-        height: 954
-      alignment: 9
-      pivot: {x: 0.5442946, y: 0.5113291}
+        x: 284
+        y: 532
+        width: 1109
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b54999f1c27d0b790800000000000000
-      internalID: -7516271193572666277
+      spriteID: c25b68138abdb3bc0800000000000000
+      internalID: -3802203944952351444
       vertices: []
       indices: 
       edges: []
