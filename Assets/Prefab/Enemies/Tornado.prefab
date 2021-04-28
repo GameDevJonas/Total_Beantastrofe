@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 596d58c4f34ddae4fb3906ca15caed78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
-  speed: 40
+  health: 8
+  speed: 30
   deFValue: 0.5
   hasDeF: 0
   posInGrid: {x: 0, y: 0}

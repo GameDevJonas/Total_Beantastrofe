@@ -47,6 +47,7 @@ public class SpawningSystem : MonoBehaviour
             }
         }
         maxProgress = totalTiles.Count;
+        spawnTimer = spawnInterval;
     }
 
     // Update is called once per frame
@@ -56,7 +57,11 @@ public class SpawningSystem : MonoBehaviour
         CheckForNextEvent();
         if (graceTimer <= 0)
         {
-            if (spawnTimer <= 0 && !inSpawn)
+            if (inSpawn)
+            {
+                return;
+            }
+            if (spawnTimer <= 0)
             {
                 StartCoroutine(SpawnTimer());
             }
@@ -104,6 +109,7 @@ public class SpawningSystem : MonoBehaviour
     {
         inSpawn = true;
         int max = Random.Range(spawnCountMin, spawnCountMax + 1);
+        Debug.Log(max);
         for (int i = 0; i < max; i++)
         {
             SpawnEnemy();
@@ -118,7 +124,11 @@ public class SpawningSystem : MonoBehaviour
     {
         Transform point = spawnPoints[Random.Range(0, spawnPoints.Count)];
         EnemyPool enemy = enemies[Random.Range(0, enemies.Count)];
-        if (enemy.weight > progress) SpawnEnemy();
+        if (enemy.whenInProgress > progress)
+        {
+            SpawnEnemy();
+            return;
+        }
         GameObject clone = Instantiate(enemy.enemy, point.position, Quaternion.identity);
     }
 }
@@ -127,7 +137,8 @@ public class SpawningSystem : MonoBehaviour
 public class EnemyPool
 {
     public GameObject enemy;
-    public int weight;
+    [Range(0,1)]
+    public float whenInProgress;
 }
 
 [System.Serializable]

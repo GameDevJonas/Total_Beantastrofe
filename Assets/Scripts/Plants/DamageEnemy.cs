@@ -23,6 +23,7 @@ public class DamageEnemy : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             collision.GetComponent<Enemy>().DamageMe(damage);
+            Debug.Log("youch");
             if (destroyOnHit)
             {
                 Destroy(this.gameObject);
