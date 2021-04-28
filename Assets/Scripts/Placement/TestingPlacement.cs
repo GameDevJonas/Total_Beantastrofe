@@ -2,15 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class TestingPlacement : MonoBehaviour, IPointerDownHandler
 {
     public GameObject placeMentIndicator;
 
+    public Plant plant;
+
+    public TextMeshProUGUI costText;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        costText.text = "" + plant.cost;
     }
 
     // Update is called once per frame
