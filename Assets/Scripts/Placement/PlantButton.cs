@@ -4,29 +4,42 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
 
-public class TestingPlacement : MonoBehaviour, IPointerDownHandler
+public class PlantButton : MonoBehaviour, IPointerDownHandler
 {
-    public GameObject placeMentIndicator;
+    public GameObject placementIndicator;
 
     public Plant plant;
 
-    public TextMeshProUGUI costText;
+    private TextMeshProUGUI costText;
+    private bool canBuy;
+    private CurrencySystem currency;
 
     // Start is called before the first frame update
     void Start()
     {
+        currency = FindObjectOfType<CurrencySystem>();
+        costText = GetComponentInChildren<TextMeshProUGUI>();
         costText.text = "" + plant.cost;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if(currency.currencyAmount < plant.cost)
+        {
+            costText.color = currency.expensive;
+            canBuy = false;
+        }
+        else
+        {
+            costText.color = currency.normal;
+            canBuy = true;
+        }
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && canBuy)
         {
             ActivateShovel shovel = FindObjectOfType<ActivateShovel>();
             if (shovel.shovelActive)
@@ -38,7 +51,7 @@ public class TestingPlacement : MonoBehaviour, IPointerDownHandler
                 return;
             }
             FindObjectOfType<GlovePointer>().isHolding = true;
-            GameObject g = Instantiate(placeMentIndicator, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity);
+            GameObject g = Instantiate(placementIndicator, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity);
         }
         //g.transform.position = new Vector3(g.transform.position.x, g.transform.position.y, 0);
     }

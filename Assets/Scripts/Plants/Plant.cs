@@ -37,19 +37,20 @@ public class Plant : MonoBehaviour
                 if (((int)myTile.x - 1 + i) >= 0 && ((int)myTile.y - 1 + j) >= 0 && ((int)myTile.x - 1 + i) <= grid.gridSizeX - 1 && ((int)myTile.y - 1 + j) <= grid.gridSizeY - 1)
                     if (onlyAdjacent)
                     {
-                        if ((i == 0 && j == 0) || (i == 0 && j == fertilizeRange.y - 1) || (i == fertilizeRange.x - 1 && j == 0) || ((i == fertilizeRange.x - 1 && j == fertilizeRange.y - 1)))
+                        if ((i == 0 && j == 0) || 
+                            (i == 0 && j == fertilizeRange.y - 1) || 
+                            (i == fertilizeRange.x - 1 && j == 0) || 
+                            (i == fertilizeRange.x - 1 && j == fertilizeRange.y - 1))
                         {
 
                         }
                         else
                         {
-                            //if (grid.tileGrid[(int)myTile.x - 1 + i, (int)myTile.y - 1 + j] != null)
                                 fertilityTileList.Add(grid.tileGrid[(int)myTile.x - 1 + i, (int)myTile.y - 1 + j]);
                         }
                     }
                     else
                     {
-                        //if (grid.tileGrid[(int)myTile.x - 1 + i, (int)myTile.y - 1 + j] != null)
                             fertilityTileList.Add(grid.tileGrid[(int)myTile.x - 1 + i, (int)myTile.y - 1 + j]);
                     }
             }

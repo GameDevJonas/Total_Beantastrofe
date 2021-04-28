@@ -47,9 +47,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
-  cost: 0
+  cost: 100
   abilityTimerSet: 3
-  damage: 0
+  damage: 10
   aoe: {x: 3, y: 3}
   myTile: {x: 0, y: 0}
   fertilizeValue: 0.025
@@ -69,7 +69,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1055939668484081675}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1

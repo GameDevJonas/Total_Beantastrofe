@@ -11,7 +11,7 @@ public class GridManager : MonoBehaviour
 
     public float spriteSizeX, spriteSizeY;
 
-    public GameObject tilePrefab;
+    public GameObject tilePrefab, spawnPointPrefab;
 
     public bool firstLineFertile, lastLine;
 
@@ -36,6 +36,7 @@ public class GridManager : MonoBehaviour
                 }
             }
         }
+        PlaceSpawners();
     }
 
     void SpawnTile(int x, int y)
@@ -59,5 +60,17 @@ public class GridManager : MonoBehaviour
         }
         tileGrid[x, y] = g.GetComponent<TileInfo>();
         g.GetComponent<TileInfo>().UpdateGridPosition(x, y);
+    }
+
+    public void PlaceSpawners()
+    {
+        for(int i = 0; i < gridSizeY; i++)
+        {
+            GameObject g = Instantiate(spawnPointPrefab);
+            //g.transform.SetParent(this.transform);
+            g.transform.localPosition = new Vector3(tileGrid[gridSizeX - 1, i].transform.position.x * spriteSizeX + 1, tileGrid[gridSizeX - 1, i].transform.position.y * spriteSizeY);
+            g.name = "Spawner no. " + i;
+            FindObjectOfType<SpawningSystem>().spawnPoints.Add(g.transform);
+        }
     }
 }

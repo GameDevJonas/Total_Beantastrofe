@@ -19,6 +19,11 @@ public class Strawberry : Plant
 
     public override void DoAbility()
     {
+        if(myStage == PlantStage.first)
+        {
+            return;
+        }
+
         if (tilesToBush.Count < 1 && !startedBushes)
         {
             foreach (TileInfo tile in fertilityTileList)

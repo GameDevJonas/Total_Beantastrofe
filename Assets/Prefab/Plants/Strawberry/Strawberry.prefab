@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
-  cost: 0
+  cost: 75
   abilityTimerSet: 5
   damage: 0
   aoe: {x: 0, y: 0}
@@ -62,6 +62,7 @@ MonoBehaviour:
   myStage: 0
   bush: {fileID: 4012176188517533003, guid: 67d8cfce75b88dd4081cb0e245106fe6, type: 3}
   bushes: []
+  queueVisual: []
 --- !u!61 &7088243597505966672
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -69,7 +70,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1055939668484081675}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1

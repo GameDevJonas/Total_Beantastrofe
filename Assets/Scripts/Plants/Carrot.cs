@@ -11,6 +11,7 @@ public class Carrot : Plant
     {
         GameObject clone = Instantiate(dirtPrefab, shootPoint.position, Quaternion.identity);
         clone.GetComponent<Rigidbody2D>().AddForce(new Vector2(1 + shootSpeed, 0));
+        clone.GetComponent<DamageEnemy>().damage = damage;
         Destroy(clone, 3);
     }
 }

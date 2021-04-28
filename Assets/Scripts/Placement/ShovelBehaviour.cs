@@ -23,12 +23,14 @@ public class ShovelBehaviour : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
-        if (hit.collider != null && hit.collider.CompareTag("Plant"))
+        if (hit.collider != null && hit.collider.CompareTag("Tile"))
         {
-            TileInfo info = hit.collider.gameObject.GetComponentInParent<TileInfo>();
+            TileInfo info = hit.collider.GetComponentInParent<TileInfo>();
+            if (info.planted)
+            {
+            Destroy(hit.collider.GetComponentInChildren<Plant>().gameObject);
             info.planted = false;
-            info.GetComponent<BoxCollider2D>().enabled = true;
-            Destroy(hit.collider.gameObject);
+            }
         }
     }
 }

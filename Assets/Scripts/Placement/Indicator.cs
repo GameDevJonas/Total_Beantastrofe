@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class FollowMouse : MonoBehaviour
+public class Indicator : MonoBehaviour
 {
     public GameObject plant;
+
+    private CurrencySystem currency;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        currency = FindObjectOfType<CurrencySystem>();
     }
 
     // Update is called once per frame
@@ -44,6 +47,7 @@ public class FollowMouse : MonoBehaviour
                 plantClone.transform.localPosition = new Vector3(0, 0, 0);
                 info.planted = true;
                 FindObjectOfType<GlovePointer>().isHolding = false;
+                currency.RemoveCurrency(plant.GetComponent<Plant>().cost);
                 Destroy(this.gameObject);
             }
         }

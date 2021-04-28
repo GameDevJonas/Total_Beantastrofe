@@ -14,11 +14,16 @@ public class TileInfo : MonoBehaviour
 
     public TileList list;
 
+    public CurrencySystem currency;
+    private float generatingTimer;
+
     private Animator anim;
     public ScriptableTile currentTile;
 
     private void Awake()
     {
+        generatingTimer = Random.Range(-10, 1);
+        currency = FindObjectOfType<CurrencySystem>();
         list = FindObjectOfType<TileList>();
         anim = GetComponent<Animator>();
     }
@@ -37,6 +42,15 @@ public class TileInfo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(fertility < 0)
+        {
+            fertility = 0;
+        }
+        if(fertility > 1)
+        {
+            fertility = 1;
+        }
+
         if(currentType != currentTile.tileName)
         {
             switch (currentType)
@@ -49,8 +63,32 @@ public class TileInfo : MonoBehaviour
                     break;
             }
         }
-        GetComponent<Collider2D>().enabled = !planted;
+        //GetComponent<Collider2D>().enabled = !planted;
         anim.SetFloat("Fertility", fertility);
+
+        if (fertility >= .9f)
+        {
+            CurrencyGenerating();
+        }
+        else
+        {
+            generatingTimer = Random.Range(-10, 1);
+        }
+    }
+
+    public void CurrencyGenerating()
+    {
+        if(generatingTimer >= currency.generatingInterval)
+        {
+            GameObject prefab = Instantiate(currency.currencyPrefab, transform.position, Quaternion.identity);
+            //prefab.GetComponent<CurrencyPrefab>().value = currency.generateAmount;
+            Destroy(prefab, currency.prefabTime);
+            generatingTimer = Random.Range(-10, 1);
+        }
+        else
+        {
+            generatingTimer += Time.deltaTime;
+        }
     }
 
     public void LoadInfo(ScriptableTile tile)
