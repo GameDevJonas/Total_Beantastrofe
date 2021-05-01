@@ -15,6 +15,7 @@ public class HowToPlayMenu : MonoBehaviour
     public int currentPos, maxPos;
     public Image currentImage;
     public TextMeshProUGUI currentText;
+    public GameObject unitHTPMenu;
 
     void Start()
     {
@@ -63,4 +64,5 @@ public class HowToPlayMenu : MonoBehaviour
             currentPos--;
         }
     }
+
 }
