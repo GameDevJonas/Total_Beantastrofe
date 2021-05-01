@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
 
-public class WatercanButton : MonoBehaviour, IPointerDownHandler
+public class WatercanButton : MonoBehaviour
 {
     public GameObject placementIndicator;
 
@@ -77,7 +77,7 @@ public class WatercanButton : MonoBehaviour, IPointerDownHandler
             }
             FindObjectOfType<GlovePointer>().isHolding = true;
             GameObject g = Instantiate(placementIndicator, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity);
-            g.GetComponent<Indicator>().myButton = this;
+            //g.GetComponent<Indicator>().myButton = this;
         }
         //g.transform.position = new Vector3(g.transform.position.x, g.transform.position.y, 0);
     }

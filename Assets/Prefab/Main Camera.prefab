@@ -1134,7 +1134,6 @@ GameObject:
   - component: {fileID: 7242671354775460854}
   - component: {fileID: 7242671354775460853}
   - component: {fileID: 7242671354775460852}
-  - component: {fileID: 7242671354775460859}
   m_Layer: 5
   m_Name: Watering can
   m_TagString: Untagged
@@ -1209,30 +1208,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7242671354775460857}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 113ff40bf30a3e546b5f1a3bcf48c8d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placementIndicator: {fileID: 0}
-  plant: {fileID: 0}
-  myCooldownImage: {fileID: 0}
+  placementIndicator: {fileID: 1055939668484081675, guid: ff01c832218869044acba2ea0e3e36d1,
+    type: 3}
+  plant: {fileID: 5697062663150966593, guid: 421c7ae7b57da734896512745f9783c3, type: 3}
+  myCooldownImage: {fileID: 7242671354319374763}
   inCooldown: 0
---- !u!114 &7242671354775460859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7242671354775460857}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a9d11ff845faf646b16abc063ffacf6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shovel: {fileID: 0}
-  glove: {fileID: 0}
-  shovelActive: 0
 --- !u!1 &7242671354901217608
 GameObject:
   m_ObjectHideFlags: 0

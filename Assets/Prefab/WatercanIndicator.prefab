@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1055939668484081676}
   - component: {fileID: 5381500099943040356}
   m_Layer: 0
-  m_Name: ShovelIndicator
+  m_Name: WatercanIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plant: {fileID: 1055939668484081675, guid: d5b8f7f3fc01f8b4eb24d6b3c445a818, type: 3}
+  myButton: {fileID: 0}
 --- !u!1 &1055939668946080584
 GameObject:
   m_ObjectHideFlags: 0
@@ -69,13 +70,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1055939668946080584}
-  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0.0000029504295}
-  m_LocalPosition: {x: 0.295, y: 0.517, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1055939668484081676}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1055939668946080585
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -116,9 +117,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 11
-  m_Sprite: {fileID: 21300000, guid: b3623d093ae881049980821cb4a9ed63, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0560f7b45c0a70144b946363e85ca696, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.6509804}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.27746135, y: 0.36289665}
