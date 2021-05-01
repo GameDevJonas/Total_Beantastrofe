@@ -81,6 +81,7 @@ public class TileInfo : MonoBehaviour
         if(generatingTimer >= currency.generatingInterval)
         {
             GameObject prefab = Instantiate(currency.currencyPrefab, transform.position, Quaternion.identity);
+            prefab.transform.position = new Vector3(prefab.transform.position.x, prefab.transform.position.y, -3);
             //prefab.GetComponent<CurrencyPrefab>().value = currency.generateAmount;
             Destroy(prefab, currency.prefabTime);
             generatingTimer = Random.Range(-10, 1);

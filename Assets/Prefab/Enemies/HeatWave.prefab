@@ -474,7 +474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
-  speed: 20
+  speed: 25
   deFValue: 0.75
   hasDeF: 0
   posInGrid: {x: 0, y: 0}
