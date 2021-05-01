@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawningSystem : MonoBehaviour
 {
     public float gracePeriod;
-    public float progress;
+    private RoundManager roundManager;
 
     public List<Transform> spawnPoints = new List<Transform>();
     public List<EnemyPool> enemies = new List<EnemyPool>();
@@ -19,8 +19,6 @@ public class SpawningSystem : MonoBehaviour
     float spawnTimer;
     private float graceTimer;
     private GridManager grid;
-    private float maxProgress, currentProgress;
-    private List<TileInfo> totalTiles = new List<TileInfo>();
 
     bool inSpawn;
 
@@ -28,6 +26,7 @@ public class SpawningSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        roundManager = FindObjectOfType<RoundManager>();
         graceTimer = gracePeriod;
         grid = FindObjectOfType<GridManager>();
         foreach (RoundTimerInfo i in roundInfo)
@@ -39,21 +38,12 @@ public class SpawningSystem : MonoBehaviour
 
     public void Initiate()
     {
-        foreach (TileInfo tile in grid.tileGrid)
-        {
-            if (tile.currentType == ScriptableTile.TileType.ground)
-            {
-                totalTiles.Add(tile);
-            }
-        }
-        maxProgress = totalTiles.Count;
         spawnTimer = spawnInterval;
     }
 
     // Update is called once per frame
     void Update()
     {
-        CheckForFertility();
         CheckForNextEvent();
         if (graceTimer <= 0)
         {
@@ -78,7 +68,7 @@ public class SpawningSystem : MonoBehaviour
 
     public void CheckForNextEvent()
     {
-        if (progress >= nextProgress)
+        if (roundManager.progress >= nextProgress)
         {
             spawnInterval = info.Peek().enemySpawningInterval;
             spawnCountMin = info.Peek().enemySpawningCountMin;
@@ -93,16 +83,6 @@ public class SpawningSystem : MonoBehaviour
                 nextProgress = 1.1f;
             }
         }
-    }
-
-    void CheckForFertility()
-    {
-        currentProgress = 0;
-        foreach (TileInfo tile in totalTiles)
-        {
-            currentProgress += tile.fertility;
-        }
-        progress = currentProgress / maxProgress;
     }
 
     IEnumerator SpawnTimer()
@@ -124,7 +104,7 @@ public class SpawningSystem : MonoBehaviour
     {
         Transform point = spawnPoints[Random.Range(0, spawnPoints.Count)];
         EnemyPool enemy = enemies[Random.Range(0, enemies.Count)];
-        if (enemy.whenInProgress > progress)
+        if (enemy.whenInProgress > roundManager.progress)
         {
             SpawnEnemy();
             return;

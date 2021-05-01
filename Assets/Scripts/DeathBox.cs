@@ -18,6 +18,7 @@ public class DeathBox : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        FindObjectOfType<RoundManager>().LoseGame();
         Destroy(collision.gameObject);
     }
 }

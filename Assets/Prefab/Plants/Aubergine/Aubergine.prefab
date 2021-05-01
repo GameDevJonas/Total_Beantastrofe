@@ -63,7 +63,7 @@ MonoBehaviour:
   myStage: 0
   smashPrefab: {fileID: 1447061681043711405, guid: 63dcd8eba8d08e248bb22be5f665565c,
     type: 3}
-  upgradedAbilityTimer: 0
+  upgradedAbilityTimer: 2
 --- !u!61 &7738086863085839106
 BoxCollider2D:
   m_ObjectHideFlags: 0
