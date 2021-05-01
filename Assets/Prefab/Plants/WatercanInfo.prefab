@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  cost: 200
+  cost: 75
   cooldownTime: 5
   abilityTimerSet: 0
   damage: 0
