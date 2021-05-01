@@ -2,16 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class HowToPlayMenu : MonoBehaviour
 {
     public bool inHTP;
     public GameObject hTPObject;
-    public Button startButton, prevButton, nextButton;
+    public Button prevButton, nextButton;
 
     public List<Sprite> hTPSprites = new List<Sprite>();
+    public List<string> hTPText = new List<string>();
     public int currentPos, maxPos;
     public Image currentImage;
+    public TextMeshProUGUI currentText;
 
     void Start()
     {
@@ -23,6 +26,7 @@ public class HowToPlayMenu : MonoBehaviour
         if (hTPObject.activeInHierarchy)
         {
             currentImage.sprite = hTPSprites[currentPos];
+            currentText.text = hTPText[currentPos];
         }
 
         if (currentPos == maxPos)
