@@ -9,7 +9,7 @@ public class TileInfo : MonoBehaviour
     public Vector2 gridPosition;
     public bool planted, canBeFertile, hasBush;
 
-    [Range(0,1)]
+    [Range(0, 1)]
     public float fertility;
 
     public TileList list;
@@ -22,7 +22,14 @@ public class TileInfo : MonoBehaviour
 
     private void Awake()
     {
-        generatingTimer = Random.Range(-10, 1);
+        if (gridPosition.x > 0)
+        {
+            generatingTimer = Random.Range(-30, -14);
+        }
+        else
+        {
+            generatingTimer = Random.Range(-10, 1);
+        }
         currency = FindObjectOfType<CurrencySystem>();
         list = FindObjectOfType<TileList>();
         anim = GetComponent<Animator>();
@@ -30,7 +37,7 @@ public class TileInfo : MonoBehaviour
 
     void Start()
     {
-        
+
         //LoadInfo(list.tiles[0]);
     }
 
@@ -42,16 +49,16 @@ public class TileInfo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(fertility < 0)
+        if (fertility < 0)
         {
             fertility = 0;
         }
-        if(fertility > 1)
+        if (fertility > 1)
         {
             fertility = 1;
         }
 
-        if(currentType != currentTile.tileName)
+        if (currentType != currentTile.tileName)
         {
             switch (currentType)
             {
@@ -72,19 +79,33 @@ public class TileInfo : MonoBehaviour
         }
         else
         {
-            generatingTimer = Random.Range(-10, 1);
+            if (gridPosition.x > 0)
+            {
+                generatingTimer = Random.Range(-30, -14);
+            }
+            else
+            {
+                generatingTimer = Random.Range(-10, 1);
+            }
         }
     }
 
     public void CurrencyGenerating()
     {
-        if(generatingTimer >= currency.generatingInterval)
+        if (generatingTimer >= currency.generatingInterval)
         {
             GameObject prefab = Instantiate(currency.currencyPrefab, transform.position, Quaternion.identity);
             prefab.transform.position = new Vector3(prefab.transform.position.x, prefab.transform.position.y, -3);
             //prefab.GetComponent<CurrencyPrefab>().value = currency.generateAmount;
             Destroy(prefab, currency.prefabTime);
-            generatingTimer = Random.Range(-10, 1);
+            if (gridPosition.x > 0)
+            {
+                generatingTimer = Random.Range(-30, -14);
+            }
+            else
+            {
+                generatingTimer = Random.Range(-10, 1);
+            }
         }
         else
         {
