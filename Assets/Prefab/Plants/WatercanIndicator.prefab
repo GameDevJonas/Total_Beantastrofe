@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1055939668484081676}
-  - component: {fileID: 5381500099943040356}
+  - component: {fileID: 5521695489169726021}
   m_Layer: 0
   m_Name: WatercanIndicator
   m_TagString: Untagged
@@ -25,14 +25,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1055939668484081675}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: -3, z: 2.267281}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1055939668946080586}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5381500099943040356
+--- !u!114 &5521695489169726021
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,11 +41,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1055939668484081675}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 087486ebbed97c644897e1da5fde1ab5, type: 3}
+  m_Script: {fileID: 11500000, guid: 24dd2dc511cb78e46839d43147340865, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plant: {fileID: 1055939668484081675, guid: d5b8f7f3fc01f8b4eb24d6b3c445a818, type: 3}
+  plant: {fileID: 3152066590576708649, guid: 421c7ae7b57da734896512745f9783c3, type: 3}
   myButton: {fileID: 0}
+  currency: {fileID: 0}
 --- !u!1 &1055939668946080584
 GameObject:
   m_ObjectHideFlags: 0
@@ -71,7 +72,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1055939668946080584}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.138, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1055939668484081676}

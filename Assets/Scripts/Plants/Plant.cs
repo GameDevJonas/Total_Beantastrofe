@@ -107,6 +107,7 @@ public class Plant : MonoBehaviour
     {
         if(myStage == PlantStage.first)
         {
+            //Evolve animasjon
             myStage = PlantStage.second;
         }
         else if(myStage == PlantStage.second)

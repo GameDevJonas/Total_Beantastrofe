@@ -65,6 +65,7 @@ MonoBehaviour:
     type: 3}
   shootPoint: {fileID: 774530024553607518}
   shootSpeed: 250
+  shootIntervalAtUpgrade: 0.3
 --- !u!61 &-5894491105827366554
 BoxCollider2D:
   m_ObjectHideFlags: 0

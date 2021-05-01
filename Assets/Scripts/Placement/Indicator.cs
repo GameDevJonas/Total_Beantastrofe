@@ -7,7 +7,7 @@ public class Indicator : MonoBehaviour
 {
     public GameObject plant;
     public PlantButton myButton;
-    private CurrencySystem currency;
+    public CurrencySystem currency;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +16,7 @@ public class Indicator : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         //transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.Translate((Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized);
@@ -32,7 +32,7 @@ public class Indicator : MonoBehaviour
         }
     }
 
-    public void PressMouse()
+    public virtual void PressMouse()
     {
         Debug.Log("Tap");
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
