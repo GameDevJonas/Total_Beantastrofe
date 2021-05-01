@@ -440,7 +440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0272f90850598e468dcba4c09c3d9be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starterCurrency: 75
+  starterCurrency: 100
   generatingInterval: 15
   generateAmount: 10
   currencyAmount: 0
@@ -473,26 +473,14 @@ MonoBehaviour:
     enemySpawningInterval: 20
     enemySpawningCountMin: 1
     enemySpawningCountMax: 1
-  - progressAmount: 0.3
-    enemySpawningInterval: 15
+  - progressAmount: 0.5
+    enemySpawningInterval: 18
     enemySpawningCountMin: 1
     enemySpawningCountMax: 1
-  - progressAmount: 0.4
+  - progressAmount: 0.8
     enemySpawningInterval: 15
     enemySpawningCountMin: 1
     enemySpawningCountMax: 2
-  - progressAmount: 0.5
-    enemySpawningInterval: 12
-    enemySpawningCountMin: 2
-    enemySpawningCountMax: 2
-  - progressAmount: 0.7
-    enemySpawningInterval: 10
-    enemySpawningCountMin: 2
-    enemySpawningCountMax: 2
-  - progressAmount: 0.9
-    enemySpawningInterval: 8
-    enemySpawningCountMin: 2
-    enemySpawningCountMax: 3
 --- !u!1001 &671964551
 PrefabInstance:
   m_ObjectHideFlags: 0

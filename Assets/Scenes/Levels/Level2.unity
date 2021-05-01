@@ -390,7 +390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridSizeX: 9
-  gridSizeY: 5
+  gridSizeY: 6
   spriteSizeX: 1
   spriteSizeY: 1
   tilePrefab: {fileID: 2504714247775841493, guid: ffb072a9860897e45a17fe536f916e63,
@@ -440,7 +440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0272f90850598e468dcba4c09c3d9be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starterCurrency: 75
+  starterCurrency: 100
   generatingInterval: 30
   generateAmount: 10
   currencyAmount: 0
@@ -468,27 +468,25 @@ MonoBehaviour:
   enemies:
   - enemy: {fileID: 7649059608637461329, guid: e3f75007b08204c46b0c5e9fe9939c25, type: 3}
     whenInProgress: 0
+  - enemy: {fileID: 7342689663646657651, guid: 052041f9013349e41a0bbe085a46debd, type: 3}
+    whenInProgress: 0.3
   roundInfo:
   - progressAmount: 0
-    enemySpawningInterval: 10
+    enemySpawningInterval: 20
     enemySpawningCountMin: 1
     enemySpawningCountMax: 1
-  - progressAmount: 0.3
-    enemySpawningInterval: 9
-    enemySpawningCountMin: 1
-    enemySpawningCountMax: 5
   - progressAmount: 0.5
-    enemySpawningInterval: 6
-    enemySpawningCountMin: 5
-    enemySpawningCountMax: 10
+    enemySpawningInterval: 15
+    enemySpawningCountMin: 1
+    enemySpawningCountMax: 2
   - progressAmount: 0.7
-    enemySpawningInterval: 5
-    enemySpawningCountMin: 10
-    enemySpawningCountMax: 15
-  - progressAmount: 0.8
-    enemySpawningInterval: 5
-    enemySpawningCountMin: 15
-    enemySpawningCountMax: 20
+    enemySpawningInterval: 15
+    enemySpawningCountMin: 2
+    enemySpawningCountMax: 2
+  - progressAmount: 0.9
+    enemySpawningInterval: 15
+    enemySpawningCountMin: 2
+    enemySpawningCountMax: 3
 --- !u!1 &918142705
 GameObject:
   m_ObjectHideFlags: 0
