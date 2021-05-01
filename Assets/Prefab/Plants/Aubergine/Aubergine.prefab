@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
-  cost: 100
-  cooldownTime: 10
+  cost: 25
+  cooldownTime: 15
   abilityTimerSet: 3
   damage: 3
   aoe: {x: 3, y: 3}
@@ -63,6 +63,7 @@ MonoBehaviour:
   myStage: 0
   smashPrefab: {fileID: 1447061681043711405, guid: 63dcd8eba8d08e248bb22be5f665565c,
     type: 3}
+  upgradedAbilityTimer: 0
 --- !u!61 &7738086863085839106
 BoxCollider2D:
   m_ObjectHideFlags: 0
