@@ -9,6 +9,7 @@ public class Aubergine : Plant
     public override void DoAbility()
     {
         GameObject clone = Instantiate(smashPrefab, transform.position, Quaternion.identity);
+        clone.GetComponent<DamageEnemy>().damage = damage;
         Destroy(clone, .2f);
     }
 }
