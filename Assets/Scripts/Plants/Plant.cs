@@ -7,6 +7,7 @@ public class Plant : MonoBehaviour
     private GridManager grid;
     public int health;
     public int cost;
+    public float cooldownTime;
     public float abilityTimerSet;
     private float abilityTimer;
     public int damage;
