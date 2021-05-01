@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class Indicator : MonoBehaviour
 {
     public GameObject plant;
-
+    public PlantButton myButton;
     private CurrencySystem currency;
 
     // Start is called before the first frame update
@@ -43,6 +43,7 @@ public class Indicator : MonoBehaviour
             TileInfo info = hit.collider.gameObject.GetComponent<TileInfo>();
             if (!info.planted && info.fertility >= .9f)
             {
+                myButton.inCooldown = true;
                 GameObject plantClone = Instantiate(plant, info.transform);
                 plantClone.transform.localPosition = new Vector3(0, 0, 0);
                 info.planted = true;

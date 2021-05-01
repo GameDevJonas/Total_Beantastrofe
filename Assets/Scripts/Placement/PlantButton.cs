@@ -13,7 +13,8 @@ public class PlantButton : MonoBehaviour, IPointerDownHandler
     public Image myCooldownImage;
 
     private TextMeshProUGUI costText;
-    private bool canBuy, inCooldown;
+    private bool canBuy;
+    public bool inCooldown;
     private float cooldownTimer;
     private CurrencySystem currency;
 
@@ -23,12 +24,13 @@ public class PlantButton : MonoBehaviour, IPointerDownHandler
         currency = FindObjectOfType<CurrencySystem>();
         costText = GetComponentInChildren<TextMeshProUGUI>();
         costText.text = "" + plant.cost;
+        cooldownTimer = plant.cooldownTime;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(currency.currencyAmount < plant.cost)
+        if (currency.currencyAmount < plant.cost)
         {
             costText.color = currency.expensive;
             canBuy = false;
@@ -42,11 +44,12 @@ public class PlantButton : MonoBehaviour, IPointerDownHandler
         {
             InCooldown();
         }
+        GetComponent<Image>().raycastTarget = !inCooldown;
     }
 
     public void InCooldown()
     {
-        if(cooldownTimer <= 0)
+        if (cooldownTimer <= 0)
         {
             inCooldown = false;
             cooldownTimer = plant.cooldownTime;
@@ -61,7 +64,7 @@ public class PlantButton : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (Input.GetMouseButtonDown(0) && canBuy)
+        if (Input.GetMouseButtonDown(0) && canBuy && !inCooldown)
         {
             ActivateShovel shovel = FindObjectOfType<ActivateShovel>();
             if (shovel.shovelActive)
@@ -74,6 +77,7 @@ public class PlantButton : MonoBehaviour, IPointerDownHandler
             }
             FindObjectOfType<GlovePointer>().isHolding = true;
             GameObject g = Instantiate(placementIndicator, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity);
+            g.GetComponent<Indicator>().myButton = this;
         }
         //g.transform.position = new Vector3(g.transform.position.x, g.transform.position.y, 0);
     }

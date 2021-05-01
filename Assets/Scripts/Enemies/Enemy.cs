@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         grid = FindObjectOfType<GridManager>();
+        speed *= .03f;
     }
 
     // Start is called before the first frame update
@@ -40,10 +41,15 @@ public class Enemy : MonoBehaviour
             MoveMe();
         }
 
-        if(health <= 0)
+        if (health <= 0)
         {
             Die();
         }
+    }
+
+    private void FixedUpdate()
+    {
+        
     }
 
     public void UpdateTiles()
@@ -101,7 +107,7 @@ public class Enemy : MonoBehaviour
 
     public void MoveMe()
     {
-        GetComponent<Rigidbody2D>().velocity = new Vector2(-speed * Time.deltaTime, 0f);
+        GetComponent<Rigidbody2D>().velocity = new Vector2(-speed, 0f);
     }
 
     public void DamageMe(int damage)

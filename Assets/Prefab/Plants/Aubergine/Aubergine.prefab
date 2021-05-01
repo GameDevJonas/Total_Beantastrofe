@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   cost: 100
+  cooldownTime: 10
   abilityTimerSet: 3
   damage: 3
   aoe: {x: 3, y: 3}
