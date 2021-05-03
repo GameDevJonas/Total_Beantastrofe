@@ -9,12 +9,17 @@ public class RoundManager : MonoBehaviour
     private GridManager grid;
     private float maxProgress, currentProgress;
     public bool gameEnded;
+    public GameObject winScreen, loseScreen;
 
     // Start is called before the first frame update
     void Start()
     {
         grid = FindObjectOfType<GridManager>();
         Invoke("Initiate", .1f);
+        winScreen = GameObject.Find("WinScreen");
+        loseScreen = GameObject.Find("LoseScreen");
+        winScreen.SetActive(false);
+        loseScreen.SetActive(false);
     }
 
     public void Initiate()
@@ -49,9 +54,9 @@ public class RoundManager : MonoBehaviour
 
     public void LoseGame()
     {
+        //You lost lmao
         gameEnded = true;
         GetComponent<SpawningSystem>().enabled = false;
-        //You lost lmao
         foreach(Enemy enemy in FindObjectsOfType<Enemy>())
         {
             Destroy(enemy.gameObject);
@@ -64,6 +69,7 @@ public class RoundManager : MonoBehaviour
         {
             plant.enabled = false;
         }
+        loseScreen.SetActive(true);
     }
 
     public void StartWinGame()
@@ -78,5 +84,14 @@ public class RoundManager : MonoBehaviour
     void WinGame()
     {
         //You win yay
+        foreach (TileInfo tile in FindObjectsOfType<TileInfo>())
+        {
+            tile.enabled = false;
+        }
+        foreach (Plant plant in FindObjectsOfType<Plant>())
+        {
+            plant.enabled = false;
+        }
+        winScreen.SetActive(true);
     }
 }

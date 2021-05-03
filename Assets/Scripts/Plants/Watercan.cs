@@ -15,7 +15,10 @@ public class Watercan : Indicator
             TileInfo info = hit.collider.gameObject.GetComponent<TileInfo>();
             if (info.planted)
             {
-                CheckForPlant(info.GetComponentInChildren<Plant>());
+                foreach(Plant child in info.GetComponentsInChildren<Plant>())
+                {
+                    if(!child.GetComponent<StrawberryBush>()) CheckForPlant(child);
+                }
             }
         }
     }

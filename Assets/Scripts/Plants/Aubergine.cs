@@ -8,10 +8,11 @@ public class Aubergine : Plant
     public float upgradedAbilityTimer;
     public override void DoAbility()
     {
-        if(myStage == PlantStage.second)
+        if (myStage == PlantStage.second)
         {
             abilityTimerSet = upgradedAbilityTimer;
         }
+        GetComponentInChildren<Animator>().SetTrigger("Attack");
         GameObject clone = Instantiate(smashPrefab, transform.position, Quaternion.identity);
         clone.GetComponent<DamageEnemy>().damage = damage;
         Destroy(clone, .2f);

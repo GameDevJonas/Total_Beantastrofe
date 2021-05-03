@@ -52,6 +52,7 @@ public class Strawberry : Plant
         Transform t = tilesToBush.Peek().transform;
 
         GameObject bushClone = Instantiate(bush, t);
+        GetComponentInChildren<Animator>().SetTrigger("Attack");
         tilesToBush.Peek().hasBush = true;
         bushes.Add(bushClone);
         tilesToBush.Dequeue();

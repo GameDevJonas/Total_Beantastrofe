@@ -108,6 +108,7 @@ public class Plant : MonoBehaviour
         if(myStage == PlantStage.first)
         {
             //Evolve animasjon
+            GetComponentInChildren<Animator>().SetTrigger("Upgrade");
             myStage = PlantStage.second;
         }
         else if(myStage == PlantStage.second)

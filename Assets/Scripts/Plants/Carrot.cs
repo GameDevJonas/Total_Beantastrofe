@@ -10,6 +10,7 @@ public class Carrot : Plant
     public float shootIntervalAtUpgrade;
     public override void DoAbility()
     {
+        GetComponentInChildren<Animator>().SetTrigger("Attack");
         GameObject clone = Instantiate(dirtPrefab, shootPoint.position, Quaternion.identity);
         clone.GetComponent<Rigidbody2D>().AddForce(new Vector2(1 + shootSpeed, 0));
         clone.GetComponent<DamageEnemy>().damage = damage;
