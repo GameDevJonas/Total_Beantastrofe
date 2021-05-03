@@ -495,6 +495,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   progress: 0
   gameEnded: 0
+  winScreen: {fileID: 0}
+  loseScreen: {fileID: 0}
 --- !u!1001 &671964551
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -642,6 +644,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7242671355325436805, guid: 45ec9215e0fca4c4682489ac87036310,
+        type: 3}
+      propertyPath: glove
+      value: 
+      objectReference: {fileID: 975319734}
+    - target: {fileID: 7242671355325436805, guid: 45ec9215e0fca4c4682489ac87036310,
+        type: 3}
+      propertyPath: shovel
+      value: 
+      objectReference: {fileID: 41050077}
     - target: {fileID: 7242671355325436809, guid: 45ec9215e0fca4c4682489ac87036310,
         type: 3}
       propertyPath: m_AnchorMax.y
