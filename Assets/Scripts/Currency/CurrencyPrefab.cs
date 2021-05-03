@@ -35,6 +35,7 @@ public class CurrencyPrefab : MonoBehaviour
 
     private void OnMouseDown()
     {
+        GameObject.Find("BeanStonksAudio").GetComponent<AudioSource>().Play();
         system.AddCurrency(system.generateAmount);
         Destroy(this.gameObject);
     }

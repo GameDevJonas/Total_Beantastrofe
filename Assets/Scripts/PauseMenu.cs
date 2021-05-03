@@ -7,7 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     public bool isPaused, inHTP;
 
-    public GameObject pauseAnim;
+    public GameObject pauseAnim, hTPObj;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +33,7 @@ public class PauseMenu : MonoBehaviour
             case false:
                 Time.timeScale = 1;
                 pauseAnim.SetActive(false);
+                hTPObj.SetActive(false);
                 break;
         }
     }
@@ -52,12 +53,6 @@ public class PauseMenu : MonoBehaviour
     public void HTP()
     {
         inHTP = !inHTP;
-        switch (inHTP)
-        {
-            case true:
-                break;
-            case false:
-                break;
-        }
+        hTPObj.SetActive(inHTP);
     }
 }

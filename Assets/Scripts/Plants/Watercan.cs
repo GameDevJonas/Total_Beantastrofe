@@ -29,6 +29,7 @@ public class Watercan : Indicator
         if(plant.myStage == Plant.PlantStage.first)
         {
             plant.OnWater();
+            GameObject.Find("UpgradeAudio").GetComponent<AudioSource>().Play();
             myButton.inCooldown = true;
             FindObjectOfType<GlovePointer>().isHolding = false;
             currency.RemoveCurrency(plant.GetComponent<Plant>().cost);

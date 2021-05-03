@@ -44,6 +44,7 @@ public class Indicator : MonoBehaviour
             if (!info.planted && info.fertility >= .9f)
             {
                 myButton.inCooldown = true;
+                GameObject.Find("PlantAudio").GetComponent<AudioSource>().Play();
                 GameObject plantClone = Instantiate(plant, info.transform);
                 plantClone.transform.localPosition = new Vector3(0, 0, 0);
                 info.planted = true;

@@ -28,7 +28,8 @@ public class ShovelBehaviour : MonoBehaviour
             TileInfo info = hit.collider.GetComponentInParent<TileInfo>();
             if (info.planted)
             {
-            Destroy(hit.collider.GetComponentInChildren<Plant>().gameObject);
+                GameObject.Find("ShovelAudio").GetComponent<AudioSource>().Play();
+                Destroy(hit.collider.GetComponentInChildren<Plant>().gameObject);
             info.planted = false;
             }
         }
